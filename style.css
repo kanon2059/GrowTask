@@ -1,0 +1,326 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f2;
+    color: #333;
+}
+
+.app {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+
+/* ヘッダー */
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #777;
+}
+
+
+/* レベル */
+
+.level {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.level span:first-child {
+    font-weight: bold;
+}
+
+.exp-bar {
+    height: 12px;
+    background: #e5e5e5;
+    border-radius: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.exp {
+    width: 30%;
+    height: 100%;
+    background: #7acb75;
+    border-radius: 20px;
+}
+
+.exp-text {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* 島 */
+
+.island {
+    height: 280px;
+    background: linear-gradient(
+        #bde7ff 0%,
+        #e9f8ff 65%,
+        #c7e8a0 65%,
+        #c7e8a0 100%
+    );
+
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.sun {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+}
+
+.tree {
+    position: absolute;
+    bottom: 80px;
+    left: 45%;
+    font-size: 60px;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 55px;
+}
+
+
+/* ToDo */
+
+.todo-section {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.todo-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+/* タスク */
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 5px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.check {
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.task span:nth-child(2) {
+    flex: 1;
+}
+
+.point {
+    font-size: 12px;
+    color: #6aaa65;
+}
+
+
+/* 完了済み */
+
+.completed span:nth-child(2) {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+
+/* 追加 */
+
+.add-task {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.add-task button {
+    border: none;
+    background: #6fbd69;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* 削除ボタン */
+
+.delete {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.delete:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* タスク完了時のアニメーション */
+
+.task.completed {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.task.completed .check {
+    color: #6fbd69;
+    font-weight: bold;
+}
+
+
+/* EXPバーのアニメーション */
+
+.exp {
+    transition: width 0.5s ease;
+}
+
+/* レベルアップ */
+
+.level-up {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: white;
+
+    padding: 25px 40px;
+
+    border-radius: 20px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    animation: levelUpAnimation 2s ease forwards;
+
+    z-index: 1000;
+}
+
+
+@keyframes levelUpAnimation {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+
+}
+
+
+/* 島の成長 */
+
+.tree {
+    transition: 0.5s;
+}
+
+/* ====================
+   連続達成
+==================== */
+
+.streak {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #e88b35;
+    margin-bottom: 8px;
+}
+
+
+/* ====================
+   特別な建物
+==================== */
+
+.special-building {
+    position: absolute;
+
+    bottom: 70px;
+    right: 35px;
+
+    font-size: 55px;
+
+    animation: castleAppear 0.8s ease;
+}
+
+
+/* お城が登場するとき */
+
+@keyframes castleAppear {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}

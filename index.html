@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrowTask</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6fbd69">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ヘッダー -->
+        <header>
+            <h1>🌱 GrowTask</h1>
+            <p>今日もひとつ、成長しよう。</p>
+        </header>
+
+
+        <!-- 島 -->
+        <section class="island-section">
+
+            <div class="level">
+                <span>LEVEL 1</span>
+
+                <div class="exp-bar">
+                    <div class="exp"></div>
+                </div>
+
+                <span class="exp-text">30 / 100 EXP</span>
+            </div>
+
+
+            <div class="island">
+
+                <div class="sun">☀️</div>
+
+                <div class="tree">🌱</div>
+
+                <div class="ground">
+                    🏝️
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ToDo -->
+        <section class="todo-section">
+
+            <h2>📋 TODAY'S TASK</h2>
+
+           <div class="task-list">
+
+    <div class="task">
+        <button class="check">○</button>
+        <span>数学の課題</span>
+        <span class="point">+10 EXP</span>
+        <button class="delete">🗑️</button>
+    </div>
+
+    <div class="task">
+        <button class="check">○</button>
+        <span>英単語を10個覚える</span>
+        <span class="point">+10 EXP</span>
+        <button class="delete">🗑️</button>
+    </div>
+
+    <div class="task completed">
+        <button class="check">✓</button>
+        <span>プログラミング課題</span>
+        <span class="point">+10 EXP</span>
+        <button class="delete">🗑️</button>
+    </div>
+
+</div>
+
+            <div class="add-task">
+
+                <input
+                    type="text"
+                    placeholder="新しいタスクを入力..."
+                    id="taskInput"
+                >
+
+                <button id="addButton">＋ 追加</button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
